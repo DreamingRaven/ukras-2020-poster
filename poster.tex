@@ -1,4 +1,5 @@
-\documentclass[12pt, landscape, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=8mm]{tikzposter}
+\documentclass[12pt, landscape, margin=0mm, innermargin=1em, blockverticalspace=1em, colspace=1em, subcolspace=8mm]{tikzposter}
+\geometry{paperheight=33.867cm,paperwidth=19.05cm}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -23,21 +24,58 @@
 \definecolor{cyan}{HTML}{2aa198}
 \definecolor{green}{HTML}{859900}
 
-\geometry{paperheight=33.867cm,paperwidth=19.05cm}
+% using these colours in our as out own palette
+\definecolorpalette{solarDarkPal} {
+    \definecolor{colorOne}{HTML}{002b36}
+    \definecolor{colorTwo}{HTML}{073642}
+    \definecolor{colorThree}{HTML}{586e75}
+}
 
-\title{Tikz Poster Example}
-\author{Overleaf Team}
+% using these colours in out own style
+\definecolorstyle{solarDarkStyle} {
+    \usecolorpalette{solarDarkPal}
+}{
+    % background
+    \colorlet{backgroundcolor}{base03}
+    \colorlet{framecolor}{base02}
+    % title colors
+    \colorlet{titlefgcolor}{cyan}
+    \colorlet{titlebgcolor}{base02}
+    % % block colors
+    \colorlet{blocktitlebgcolor}{base01}
+    \colorlet{blocktitlefgcolor}{base1}
+    \colorlet{blockbodybgcolor}{base01}
+    \colorlet{blockbodyfgcolor}{base1}
+    % innerblock colors
+    \colorlet{innerblocktitlebgcolor}{base01}
+    \colorlet{innerblocktitlefgcolor}{base03}
+    \colorlet{innerblockbodybgcolor}{base02}
+    \colorlet{innerblockbodyfgcolor}{base01}
+    % note colors
+    \colorlet{notefgcolor}{base03}
+    \colorlet{notebgcolor}{base02}
+    \colorlet{noteframecolor}{base02}
+}
+
+\title{The Augmented Agronomist Pipeline and Time Series Forecasting}
+\author{George Onoufriou, Marc Hanheide, Georgios Leontidis}
 \date{\today}
-\institute{Overleaf Institute}
+% \institute{Overleaf Institute}
 
 \usetheme{Default}
 % \usecolorpalette{BlueGreyOrange}
-\usecolorstyle[colorPalette=Default,colorOne=base03,colorTwo=base02,colorThree=base01]{Default}
+% \usecolorstyle[colorPalette=Default,colorOne=base03,colorTwo=base02,colorThree=base01]{Default}
+\usecolorstyle{solarDarkStyle}
 
 \begin{document}
 
 \maketitle[titletotopverticalspace=1em, titletoblockverticalspace=1em]
 
-\block{test}{test}
+\begin{columns}
+  \column{0.2}
+  \block{test}{test}
+  test
+\end{columns}
+
 
 \end{document}
